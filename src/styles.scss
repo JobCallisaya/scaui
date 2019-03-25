@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
 
 $lt-gray: #ddd;
 $background-dark: #512DA8;
@@ -30,6 +31,7 @@ body {
 .container {
   margin: 20px;
   display: flex;
+  width: 95%;
 }
 
 .background-primary {

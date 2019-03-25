@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Item} from '../shared/item';
-import {ItemService} from '../services/item.service';
+import {Accidente} from '../shared/accidente';
+import {AccidenteService} from '../services/accidente.service';
 import {Employee} from '../shared/employee';
 import {EmployeeService} from '../services/employee.service';
 
@@ -11,10 +11,10 @@ import {EmployeeService} from '../services/employee.service';
 })
 export class HomeComponent implements OnInit {
 
-  item: Item;
+  item: Accidente;
   employee: Employee;
 
-  constructor(private itemService: ItemService,
+  constructor(private itemService: AccidenteService,
               private employeeService: EmployeeService) {
   }
 

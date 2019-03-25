@@ -1,6 +1,6 @@
-import {Item} from './item';
+import {Accidente} from './accidente';
 
-export const ITEMS: Item[] = [
+export const ITEMS: Accidente[] = [
   {
     id: 0,
     featured: true,

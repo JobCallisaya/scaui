@@ -36,7 +36,7 @@ import {
   MatTooltipModule,
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {CatalogComponent} from './catalog/catalog.component';
+import {AccidenteComponent} from './accidente/accidente.component';
 import {ItemDetailComponent} from './item-detail/item-detail.component';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
@@ -48,18 +48,20 @@ import {LoginComponent} from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {baseURL} from './shared/baseurl';
+import { SidemenuComponent } from './sidemenu/sidemenu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CatalogComponent,
+    AccidenteComponent,
     ItemDetailComponent,
     HeaderComponent,
     FooterComponent,
     AboutComponent,
     HomeComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    SidemenuComponent
   ],
   imports: [
     BrowserModule,

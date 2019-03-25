@@ -1,0 +1,18 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav
+               mode="side"
+               opened
+               class="sidenav"
+               fxLayout="column"
+               fxLayoutAlign.gt-md="left">
+    <div class="flex-no-grow">
+      <button routerLink="/home" class="sidenav-button" mat-button>Home</button>
+    </div>
+    <div class="flex-no-grow">
+      <button routerLink="/catalog" class="sidenav-button" mat-button>Accidentes</button>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content role="region">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

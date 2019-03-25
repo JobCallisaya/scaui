@@ -1,0 +1,97 @@
+<div class="container"
+     fxLayout="column">
+
+  <div class="row">
+    <h3>Gestion de accidentes/incidentes antes de la ejecucion de la obra</h3>
+    <hr>
+  </div>
+  <div class="row">
+    <h5>{{isNew ? 'Nuevo' : 'Editar'}} Accidente</h5>
+  </div>
+  <div class="row">
+    <mat-form-field class="col-md-6">
+      <input matInput placeholder="Nombre" type="text" required [(ngModel)]="selectedAccident.nombre">
+    </mat-form-field>
+    <mat-form-field class="col-md-6">
+      <input matInput placeholder="Descripcion" type="text" [(ngModel)]="selectedAccident.descripcion">
+    </mat-form-field>
+    <mat-form-field class="col-md-6">
+      <mat-select placeholder="Tipo de accidente" required [(ngModel)]="selectedAccident.tipo">
+        <mat-option *ngFor="let accidentType of accidenteTipos" [value]="accidentType">
+          {{ accidentType }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="col-md-6">
+      <mat-select placeholder="Severidad" required [(ngModel)]="selectedAccident.severidad">
+        <mat-option *ngFor="let severidad of severidades" [value]="severidad">
+          {{ severidad }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <div class="col-md-9"></div>
+    <div class="col-md-3" >
+      <button mat-button
+              class="background-primary text-floral-white action-button"
+              (click)="cancel()"
+              [hidden]="isNew">
+        Cancelar
+      </button>
+      <button mat-button
+              (click)="save()"
+              disabled = "{{!canSave()}}"
+              class="background-primary text-floral-white action-button">
+        Guardar
+      </button>
+    </div>
+  </div>
+  <div class="table-container row">
+    <table mat-table [dataSource]="accidentes">
+      <ng-container matColumnDef="Nombre">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Descripcion">
+        <th mat-header-cell *matHeaderCellDef>Descripcion</th>
+        <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Tipo">
+        <th mat-header-cell *matHeaderCellDef>Tipo</th>
+        <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Severidad">
+        <th mat-header-cell *matHeaderCellDef>Severidad</th>
+        <td mat-cell *matCellDef="let element"> {{element.severidad}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="delete(element)">
+            <mat-icon class="mat-18">delete</mat-icon>
+          </button>
+          <button mat-icon-button (click)="edit(element)">
+            <mat-icon class="mat-18">edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="accidentColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: accidentColumns;"></tr>
+    </table>
+  </div>
+  <div [hidden]="accidentes">
+    <mat-spinner></mat-spinner>
+    <h4>Loading . . . Please Wait</h4>
+  </div>
+</div>
+
+
+
+
+

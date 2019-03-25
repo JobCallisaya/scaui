@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Item} from '../shared/item';
-import {ItemService} from '../services/item.service';
+import {Accidente} from '../shared/accidente';
+import {AccidenteService} from '../services/accidente.service';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Location} from '@angular/common';
 import 'rxjs/add/operator/switchMap';
@@ -12,12 +12,12 @@ import 'rxjs/add/operator/switchMap';
 })
 export class ItemDetailComponent implements OnInit {
 
-  item: Item;
+  item: Accidente;
   itemIds: number[];
   prev: number;
   next: number;
 
-  constructor(private itemService: ItemService,
+  constructor(private itemService: AccidenteService,
               private route: ActivatedRoute,
               private location: Location) {
   }
